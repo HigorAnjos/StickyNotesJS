@@ -48,7 +48,7 @@ function createNote() {
     node0.style.transform = "scale(1)";
   })
 
-  node0.addEventListener("dbclick", function(){
+  node0.addEventListener("dblclick", function(){
     node0.remove();
   })
 
