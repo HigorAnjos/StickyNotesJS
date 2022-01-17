@@ -1,6 +1,8 @@
 const [container2] = document.getElementsByClassName("container2");
-
 const [container3] =  document.getElementsByClassName("container3");
+const random_margin = ["-5px", "1px", "5px", "10px", "7px"];
+const random_rotate = ["rotate(3deg)", "rotate(1deg)", "rotate(-1deg)", "rotate(-3deg)", "rotate(-5deg)", "rotate(-8deg)"];
+const random_color = ["#c2ff3d","#ff3de8","#3dc2ff","#04e022","#bc83e6","#ebb328"];
 
 const checkIcon = document.getElementById("check-icon");
 const xIcon = document.getElementById("x-icon");
@@ -15,7 +17,6 @@ checkIcon.addEventListener("click", function (){
 })
 
 function typeNote () {
-  console.log('XXXXX');
   if (container3.style.display == "none") {
     container3.style.display = "block";
   } else {
@@ -55,19 +56,11 @@ function createNote() {
   document.getElementById("note-text").value = '';
 }
 
-function margin() {
-  const random_margin = ["-5px", "1px", "5px", "10px", "7px"];
+const margin = () => random_margin[Math.floor(Math.random() * random_margin.length)];
 
-  return random_margin[Math.floor(Math.random() * random_margin.length)];
-}
-
-function rotate() {
-  const random_rotate = ["rotate(3deg)", "rotate(1deg)", "rotate(-1deg)", "rotate(-3deg)", "rotate(-5deg)", "rotate(-8deg)"];
-  return random_rotate[Math.floor(Math.random() * random_rotate.length)];
-}
+const rotate = () => random_rotate[Math.floor(Math.random() * random_rotate.length)];
 
 function color() {
-  const random_color = ["#c2ff3d","#ff3de8","#3dc2ff","#04e022","#bc83e6","#ebb328"];
   if (i > random_color.length - 1) i = 0;
   return random_color[i++];
 }
